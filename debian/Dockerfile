@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch-slim
 
 LABEL fr.kyane.image="registry.kyane.fr:5000/debian"
 MAINTAINER kyane@kyane.fr
@@ -8,6 +8,5 @@ RUN apt-get update -y \
         git \
         curl \
         wget \
-        nano
-
-CMD ["/bin/bash"]
+        nano \
+ && rm -rf /var/lib/apt/lists/*
