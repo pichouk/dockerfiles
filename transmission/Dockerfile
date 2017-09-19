@@ -5,10 +5,11 @@ MAINTAINER kyane@kyane.fr
 
 RUN apt-get update -y \
  && apt-get install -y \
-        transmission-daemon \
-				transmission-cli \
-				transmission-common \
-				jq
+      transmission-daemon \
+      transmission-cli \
+      transmission-common \
+      jq \
+ && rm -rf /var/lib/apt/lists/*
 
 # Add entrypoint
 COPY entrypoint.sh /
