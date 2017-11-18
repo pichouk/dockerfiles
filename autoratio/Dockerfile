@@ -1,10 +1,12 @@
-FROM node:8
+FROM node:9-alpine
 
 LABEL fr.kyane.image="registry.kyane.fr:5000/autoratio"
 MAINTAINER kyane@kyane.fr
 
 ## Get the code and install dependencies
-RUN git clone https://github.com/pichouk/autoratio.git /autoratio \
+RUN apk add --no-cache --virtual .build-deps \
+      git \ 
+    && git clone https://github.com/pichouk/autoratio.git /autoratio \
     && cd /autoratio \
     && yarn install
 
