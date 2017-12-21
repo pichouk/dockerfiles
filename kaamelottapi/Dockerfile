@@ -3,7 +3,9 @@ FROM node:9-alpine
 MAINTAINER kyane@kyane.fr
 
 # Get code
-RUN git clone https://framagit.org/pichouk/kaamelottapi.git /code
+RUN apk add --no-cache \
+      git && \
+    git clone https://framagit.org/pichouk/kaamelottapi.git /code
 WORKDIR /code
 
 # Install dependencies
