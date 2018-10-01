@@ -1,6 +1,6 @@
 FROM python:alpine3.6
 
-MAINTAINER kyane@kyane.fr
+LABEL maintainer="kyane@kyane.fr"
 
 ENV PYTHONUNBUFFERED 1
 
