@@ -1,5 +1,7 @@
 FROM alpine:3.6
 
+LABEL maintainer="kyane@kyane.fr"
+
 # Hugo version
 ARG HUGO_VERSION=0.29
 

@@ -1,6 +1,6 @@
 FROM node:9-alpine
 
-MAINTAINER kyane@kyane.fr
+LABEL maintainer="kyane@kyane.fr"
 
 # Get code
 RUN apk add --no-cache \
