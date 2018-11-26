@@ -1,6 +1,6 @@
 FROM node:9-alpine
 
-LABEL fr.kyane.image="registry.kyane.fr:5000/autoratio"
+LABEL fr.kyane.image="registry.kyane.fr/autoratio"
 LABEL maintainer="kyane@kyane.fr"
 
 ## Get the code and install dependencies

@@ -1,6 +1,6 @@
 FROM registry.kyane.fr:5000/debian:latest
 
-LABEL fr.kyane.image="registry.kyane.fr:5000/murmur"
+LABEL fr.kyane.image="registry.kyane.fr/murmur"
 MAINTAINER kyane@kyane.fr
 
 # Install Muble-server

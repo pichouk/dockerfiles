@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-LABEL fr.kyane.image="registry.kyane.fr:5000/debian"
+LABEL fr.kyane.image="registry.kyane.fr/debian"
 LABEL maintainer="kyane@kyane.fr"
 
 RUN apt-get update -y \
