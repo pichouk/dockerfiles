@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
 LABEL fr.kyane.image="registry.kyane.fr/debian"
 LABEL maintainer="kyane@kyane.fr"
