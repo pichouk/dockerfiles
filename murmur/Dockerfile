@@ -1,4 +1,4 @@
-FROM registry.kyane.fr:5000/debian:latest
+FROM registry.kyane.fr/debian:latest
 
 LABEL fr.kyane.image="registry.kyane.fr/murmur"
 MAINTAINER kyane@kyane.fr
