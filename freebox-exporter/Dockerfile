@@ -1,6 +1,6 @@
 FROM golang:1.14
 
-ENV EXPORTER_VERSION=1.2
+ENV EXPORTER_VERSION=1.2.1
 
 ADD https://github.com/saphoooo/freebox_exporter/archive/v${EXPORTER_VERSION}.tar.gz /
 
