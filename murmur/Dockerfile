@@ -1,4 +1,4 @@
-FROM registry.kyane.fr/debian:latest
+FROM debian:buster-slim
 
 LABEL fr.kyane.image="registry.kyane.fr/murmur"
 MAINTAINER kyane@kyane.fr
