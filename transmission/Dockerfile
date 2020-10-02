@@ -1,4 +1,4 @@
-FROM registry.kyane.fr:5000/debian:latest
+FROM debian:buster-slim
 
 LABEL fr.kyane.image="registry.kyane.fr/transmission"
 LABEL maintainer="kyane@kyane.fr"
