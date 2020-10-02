@@ -1,4 +1,4 @@
-FROM golang:1.14
+FROM golang:1.14 as builder
 
 ENV EXPORTER_VERSION=1.2.1
 
@@ -25,8 +25,8 @@ RUN set -x && \
 
 FROM scratch
 
-COPY --from=0 app /
+COPY --from=builder app /
 
-COPY --from=0 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 ENTRYPOINT ["/app"]
