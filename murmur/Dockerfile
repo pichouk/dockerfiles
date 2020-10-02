@@ -1,7 +1,7 @@
 FROM debian:buster-slim
 
 LABEL fr.kyane.image="registry.kyane.fr/murmur"
-MAINTAINER kyane@kyane.fr
+LABEL maintainer="kyane@kyane.fr"
 
 # Install Muble-server
 RUN apt-get update -y \
