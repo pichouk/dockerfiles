@@ -14,24 +14,24 @@ then
 fi
 
 # Change configuration
-sed -i -E "s/^(\/\/ )?database( )?=.*/database=\/data\/murmur.sqlite/g" $CONFIG_FILE
-sed -i -E "s/^(\/\/ )?logfile( )?=.*/logfile=/g" $CONFIG_FILE
-sed -i -E "s/^(\/\/ )?bandwidth( )?=.*/bandwidth=$MAX_BANDWIDTH/g" $CONFIG_FILE
-sed -i -E "s/^(\/\/ )?users( )?=.*/users=$MAX_USERS/g" $CONFIG_FILE
-sed -i -E "s/^(\/\/ )?bonjour( )?=.*/bonjour=$BONJOUR_ENABLE/g" $CONFIG_FILE
-sed -i -E "s/^(\/\/ )?sendversion( )?=.*/sendversion=$SENDVERSION_ENABLE/g" $CONFIG_FILE
+sed -i -E "s/^(;.*)?database( )?=.*/database=\/data\/murmur.sqlite/g" $CONFIG_FILE
+sed -i -E "s/^(;.*)?logfile( )?=.*/logfile=/g" $CONFIG_FILE
+sed -i -E "s/^(;.*)?bandwidth( )?=.*/bandwidth=$MAX_BANDWIDTH/g" $CONFIG_FILE
+sed -i -E "s/^(;.*)?users( )?=.*/users=$MAX_USERS/g" $CONFIG_FILE
+sed -i -E "s/^(;.*)?bonjour( )?=.*/bonjour=$BONJOUR_ENABLE/g" $CONFIG_FILE
+sed -i -E "s/^(;.*)?sendversion( )?=.*/sendversion=$SENDVERSION_ENABLE/g" $CONFIG_FILE
 
 # Enable IPv6
 if [ "$ENABLE_IPV6" = true ]
 then
   # Enable IPv4 and IPv6, default blank bind all
-  sed -i -E "s/^(\/\/ )?host( )?=.*/host=0.0.0.0,::/g" $CONFIG_FILE
+  sed -i -E "s/^(;.*)?host( )?=.*/host=0.0.0.0,::/g" $CONFIG_FILE
 fi
 
 # Run exporter if variable set
 if [ -n "$METRICS_SERVER_LABEL" ]
 then
-  sed -i -E "s/^(\/\/ )?ice( )?=.*/ice='tcp -h 127.0.0.1 -p 6502'/g" $CONFIG_FILE
+  sed -i -E "s/^(;.*)?ice( )?=.*/ice='tcp -h 127.0.0.1 -p 6502'/g" $CONFIG_FILE
   python3 /exporter.py &
 fi
 
